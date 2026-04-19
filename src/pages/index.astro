@@ -1,17 +1,43 @@
 ---
+import "../styles/global.css";
 
+import Header from "../components/Header.astro";
+import Job from "../components/Job.astro";
+import Footer from "../components/Footer.astro";
+
+import { jobs } from "../data/jobs.js";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yin Chu Rijnaard's digital resume" />
+    <!-- Add keywords for search engines (?) -->
+    <!-- <meta name="keywords" content="HTML, CSS, JavaScript" /> -->
+    <title>Resume - Yin Chu Rijnaard</title>
+  </head>
+
+  <body class="bg-neutral-900 text-neutral-100 space-y-4">
+    <Header />
+    <hr class="text-neutral-700" />
+
+    <div>
+      <h3 class="text-2xl font-bold p-4 underline decoration-orange-500">
+        Employment History
+      </h3>
+      {jobs.map((job: any) => <Job {...job} />)}
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-bold p-4 underline decoration-orange-500">
+        Education
+      </h3>
+    </div>
+
+    <hr class="text-neutral-700" />
+    <Footer />
+  </body>
 </html>
