@@ -1,0 +1,16 @@
+---
+import "../styles/global.css";
+
+import { skills } from "../data/skills.js";
+---
+
+<div class="m-6 flex flex-wrap justify-start space-x-4 space-y-4 sm:text-xl">
+  {
+    skills &&
+      skills.map((skill) => (
+        <p class="border-2 rounded-lg border-neutral-700 bg-neutral-700 p-2 w-fit h-fit">
+          {skill}
+        </p>
+      ))
+  }
+</div>

@@ -1,0 +1,16 @@
+export const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React.js",
+  "Next.js",
+  "Tailwind CSS",
+  "Astro",
+  "Sanity",
+  "Accountability",
+  "Adaptability",
+  "Flexibility",
+  "Integrity",
+  "Time management",
+];

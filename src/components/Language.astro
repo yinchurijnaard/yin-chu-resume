@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+
+import { languages } from "../data/languages.js";
+---
+
+<div class="m-6 sm:text-xl">
+  <ul class="flex flex-col space-y-4 space-x-4">
+    {
+      languages &&
+        languages.map((language) => (
+          <li class="border-2 rounded-lg border-neutral-700 bg-neutral-700 p-2 w-fit h-fit">
+            {language.language} &lpar;{language.level}&rpar;
+          </li>
+        ))
+    }
+  </ul>
+</div>

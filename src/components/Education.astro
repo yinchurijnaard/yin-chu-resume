@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import type { JobsProps } from "../types/jobs.types.ts";
 
 const props = Astro.props;
 ---
@@ -9,7 +8,7 @@ const props = Astro.props;
   class="border-2 rounded-lg border-neutral-700 text-neutral-300 p-6 m-6 space-y-2 sm:text-xl"
 >
   <p class="font-bold text-neutral-100">
-    {props.title}&nbsp;|&nbsp;{props.company}
+    {props.degree}&nbsp;|&nbsp;{props.university}
   </p>
   <p class="italic">
     <span class="not-italic">📅&nbsp;</span>{props.dateStart}&nbsp;-&nbsp;{
@@ -17,9 +16,4 @@ const props = Astro.props;
     }
   </p>
   <p>📍&nbsp;{props.location},&nbsp;{props.country}</p>
-  <p>🎯&nbsp;Tasks&nbsp;&amp;&nbsp;Responsibilities&colon;</p>
-  <ul class="list-disc list-inside">
-    {props.tasks && props.tasks.map((task: JobsProps) => <li>{task}</li>)}
-    <!-- ^ is creating a whole new folder and file for one type-file necessary, just for this? -->
-  </ul>
 </div>

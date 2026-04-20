@@ -3,9 +3,14 @@ import "../styles/global.css";
 
 import Header from "../components/Header.astro";
 import Job from "../components/Job.astro";
+import Education from "../components/Education.astro";
+import Skill from "../components/Skill.astro";
+import Language from "../components/Language.astro";
 import Footer from "../components/Footer.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 
 import { jobs } from "../data/jobs.js";
+import { education } from "../data/education.js";
 ---
 
 <html lang="en">
@@ -24,18 +29,21 @@ import { jobs } from "../data/jobs.js";
     <Header />
     <hr class="text-neutral-700" />
 
-    <div>
-      <h3 class="text-2xl font-bold p-4 underline decoration-orange-500">
-        Employment History
-      </h3>
-      {jobs.map((job: any) => <Job {...job} />)}
-    </div>
+    <!-- Employment History Cards -->
+    <SectionTitle sectionTitle={"Employment History"} />
+    {jobs.map((job: any) => <Job {...job} />)}
 
-    <div>
-      <h3 class="text-2xl font-bold p-4 underline decoration-orange-500">
-        Education
-      </h3>
-    </div>
+    <!-- Education Cards -->
+    <SectionTitle sectionTitle={"Education"} />
+    {education.map((edu) => <Education {...edu} />)}
+
+    <!-- Skills List -->
+    <SectionTitle sectionTitle={"Skills"} />
+    <Skill />
+
+    <!-- Languages List -->
+    <SectionTitle sectionTitle={"Languages"} />
+    <Language />
 
     <hr class="text-neutral-700" />
     <Footer />
