@@ -19,7 +19,7 @@ export const jobs = [
     location: "Engelberg",
     country: "Switzerland",
     tasks: [
-      "Controlled access and ensured eUicient guest management",
+      "Controlled access and ensured efficient guest management",
       "Maintained operational overview during peak periods",
     ],
   },
